@@ -37,3 +37,5 @@ Repositorio GitHub:
 
 GitHub pages:
     -Cambiar el nombre de la carpeta dist por docs
+    -En el repo, seleccionar settings/pages y en branch seleccionar la main
+    -Luego, seleccionar la carpeta /docs
