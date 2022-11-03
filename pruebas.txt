@@ -1,0 +1,50 @@
+Instalación y configuracion de Jest + React Testing Library (ambiente de pruebas )
+Comandos:
+    -npm add --dev jest babel-jest @babel/preset-env @babel/preset-react
+    -npm add --dev @testing-library/react @types/jest jest-environment-jsdom
+    -npm add prop-types
+    -npm run test (para correr las pruebas) 
+
+
+Si se usa Fetch API en el proyeto:
+    -npm add --dev whatwg-fetch
+
+Luego, actualizar scripts de package.json
+    "scripts: {
+        ...
+        "test": "jest --watchAll"
+
+configurar archivo babel.config.json
+    {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "esmodules": true
+                    }
+                }
+            ],
+            [
+                "@babel/react",
+                {
+                    "runtime": "automatic",
+                    "jsx": "react-jsx"
+                }
+            ]
+        ]
+    }
+
+
+crear Jest.config.json:
+    {
+        "testEnvironment": "jest-environment-jsdom",
+        "setupFiles": [
+            "./jest.setup.json"
+        ]
+    }
+
+crear jest.setup.json:
+    {
+        "import": "whatwg-fetch"
+    }   
